@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, m, Variants } from "framer-motion";
 import { useMemo } from "react";
 
 interface BlurFadeTextProps {
@@ -16,6 +16,7 @@ interface BlurFadeTextProps {
   delay?: number;
   yOffset?: number;
   animateByCharacter?: boolean;
+  as?: "div" | "h1" | "h2" | "p";
 }
 const BlurFadeText = ({
   text,
@@ -25,6 +26,7 @@ const BlurFadeText = ({
   delay = 0,
   yOffset = 8,
   animateByCharacter = false,
+  as: Wrapper = "div",
 }: BlurFadeTextProps) => {
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: "blur(8px)" },
@@ -35,17 +37,16 @@ const BlurFadeText = ({
 
   if (animateByCharacter) {
     return (
-      <div className="flex">
+      <Wrapper className="flex">
         <AnimatePresence>
           {characters.map((char, i) => (
-            <motion.span
+            <m.span
               key={i}
               initial="hidden"
               animate="visible"
               exit="hidden"
               variants={combinedVariants}
               transition={{
-                yoyo: Infinity,
                 delay: delay + i * characterDelay,
                 ease: "easeOut",
               }}
@@ -53,32 +54,31 @@ const BlurFadeText = ({
               style={{ width: char.trim() === "" ? "0.2em" : "auto" }}
             >
               {char}
-            </motion.span>
+            </m.span>
           ))}
         </AnimatePresence>
-      </div>
+      </Wrapper>
     );
   }
 
   return (
-    <div className="flex">
+    <Wrapper className="flex">
       <AnimatePresence>
-        <motion.span
+        <m.span
           initial="hidden"
           animate="visible"
           exit="hidden"
           variants={combinedVariants}
           transition={{
-            yoyo: Infinity,
             delay,
             ease: "easeOut",
           }}
           className={cn("inline-block", className)}
         >
           {text}
-        </motion.span>
+        </m.span>
       </AnimatePresence>
-    </div>
+    </Wrapper>
   );
 };
 

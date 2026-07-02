@@ -1,8 +1,9 @@
 import Navbar from "@/components/navbar";
+import { MotionProvider } from "@/components/motion-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
-import { cn } from "@/lib/utils";
+import { cn, safeJsonLd } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: `${DATA.name}`,
     description: DATA.description,
@@ -61,10 +65,40 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: safeJsonLd({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: DATA.name,
+              url: DATA.url,
+              image: `${DATA.url}${DATA.avatarUrl}`,
+              jobTitle: DATA.work[0]?.title,
+              worksFor: {
+                "@type": "Organization",
+                name: DATA.work[0]?.company,
+              },
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: DATA.location,
+              },
+              email: DATA.contact.email,
+              sameAs: Object.values(DATA.contact.social).reduce<string[]>(
+                (urls, social) =>
+                  social.navbar ? [...urls, social.url] : urls,
+                []
+              ),
+            }),
+          }}
+        />
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            {children}
-            <Navbar />
+            <MotionProvider>
+              {children}
+              <Navbar />
+            </MotionProvider>
           </TooltipProvider>
         </ThemeProvider>
       </body>

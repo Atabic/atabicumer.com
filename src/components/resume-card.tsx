@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -87,7 +87,7 @@ export const ResumeCard = ({
             {subtitle && <div className="font-sans text-xs">{subtitle}</div>}
           </CardHeader>
           {description && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, height: 0 }}
               animate={{
                 opacity: isExpanded ? 1 : 0,
@@ -101,7 +101,7 @@ export const ResumeCard = ({
               className="mt-2 text-xs sm:text-sm"
             >
               {description}
-            </motion.div>
+            </m.div>
           )}
         </div>
       </Card>

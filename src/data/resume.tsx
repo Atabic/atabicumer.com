@@ -3,8 +3,8 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
   name: "Atabic",
-  initials: "DV",
-  url: "https://atabic.github.io/",
+  initials: "AU",
+  url: "https://atabicumer.com",
   location: "Lahore, Pakistan",
   locationLink: "https://www.google.com/maps/place/lahore",
   description: "I love building things and helping people.",

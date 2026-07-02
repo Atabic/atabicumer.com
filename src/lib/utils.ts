@@ -5,6 +5,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+/**
+ * Safe to inline into a <script type="application/ld+json"> tag: escapes
+ * "<" so embedded data can't close the tag early (XSS via JSON-LD).
+ */
+export function safeJsonLd(data: unknown) {
+  return JSON.stringify(data).replaceAll("<", "\\u003c");
+}
+
 export function formatDate(date: string) {
   let currentDate = new Date().getTime();
   if (!date.includes("T")) {
