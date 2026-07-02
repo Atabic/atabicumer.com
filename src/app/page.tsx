@@ -210,7 +210,7 @@ export default function Page() {
                 Want to chat? Just shoot me a dm{" "}
                 <Link
                   href={DATA.contact.social.X.url}
-                  className="text-blue-500 hover:underline"
+                  className="text-blue-600 underline dark:text-blue-400"
                 >
                   with a direct question on twitter
                 </Link>{" "}
