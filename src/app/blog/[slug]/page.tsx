@@ -70,7 +70,7 @@ export default async function Blog({
   }
 
   return (
-    <section id="blog">
+    <main id="blog">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -107,6 +107,6 @@ export default async function Blog({
         className="prose dark:prose-invert"
         dangerouslySetInnerHTML={{ __html: post.source }}
       ></article>
-    </section>
+    </main>
   );
 }

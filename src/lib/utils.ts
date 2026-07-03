@@ -5,6 +5,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export function isExternalUrl(url: string) {
+  return /^https?:\/\//.test(url);
+}
+
 /**
  * Safe to inline into a <script type="application/ld+json"> tag: escapes
  * "<" so embedded data can't close the tag early (XSS via JSON-LD).

@@ -61,7 +61,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen bg-background font-sans antialiased relative",
           fontSans.variable
         )}
       >
@@ -96,7 +96,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             <MotionProvider>
-              {children}
+              <div className="max-w-2xl mx-auto py-12 sm:py-24 px-6">
+                {children}
+              </div>
               <Navbar />
             </MotionProvider>
           </TooltipProvider>

@@ -1,32 +1,53 @@
 import { Icons } from "@/components/icons";
+import { Aws } from "@/components/ui/svgs/aws";
+import { Docker } from "@/components/ui/svgs/docker";
+import { Gcp } from "@/components/ui/svgs/gcp";
+import { GithubActions } from "@/components/ui/svgs/githubActions";
+import { NestJs } from "@/components/ui/svgs/nestjs";
+import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
+import { Nginx } from "@/components/ui/svgs/nginx";
+import { Nodejs } from "@/components/ui/svgs/nodejs";
+import { Playwright } from "@/components/ui/svgs/playwright";
+import { Postgresql } from "@/components/ui/svgs/postgresql";
+import { ReactLight } from "@/components/ui/svgs/reactLight";
+import { Typescript } from "@/components/ui/svgs/typescript";
+import { WebdriverIo } from "@/components/ui/svgs/webdriverio";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
-  name: "Atabic",
+  name: "Atabic Umer",
   initials: "AU",
   url: "https://atabicumer.com",
   location: "Lahore, Pakistan",
   locationLink: "https://www.google.com/maps/place/lahore",
-  description: "I love building things and helping people.",
+  description:
+    "Full-stack engineer (TypeScript, React, Node, AWS) who builds production web apps and the MCP servers and AI plugins that automate the boring parts of engineering work.",
   summary:
-    "Started off as a backend developer for a startup and transitioned to Full Stack JS developer. I have experience working with React, Next.js, Node.js, and Postgres. I am passionate about building scalable and maintainable software. I am always looking to learn new things and improve my skills.",
+    "Most of my recent work is building MCP servers, AI plugins, small backend services that let tools like Claude and Cursor safely read and act on real internal systems. ERP-MCP, below, is the clearest example.\n\nThat sits on top of about six years as a full-stack engineer, currently leading the Live Ops admin dashboard for Merit Incentives, plus past work for clients like Kayak, Avetta, and Curriki. Projects and experience below go into the specifics.\n\nBased in Lahore, Pakistan. Open to remote work.",
   avatarUrl: "/me.jpg",
   skills: [
-    "React",
-    "Next.js",
-    "Typescript",
-    "Node.js",
-    "Postgres",
-    "Docker",
-    "Github actions",
+    { name: "TypeScript", icon: Typescript },
+    { name: "React", icon: ReactLight },
+    { name: "Next.js", icon: NextjsIconDark },
+    { name: "Node.js", icon: Nodejs },
+    { name: "NestJS", icon: NestJs },
+    { name: "PostgreSQL", icon: Postgresql },
+    { name: "AWS", icon: Aws },
+    { name: "GCP", icon: Gcp },
+    { name: "Docker", icon: Docker },
+    { name: "NGINX", icon: Nginx },
+    { name: "GitHub Actions", icon: GithubActions },
+    { name: "Playwright", icon: Playwright },
+    { name: "WebdriverIO", icon: WebdriverIo },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
-    email: "atabic14@gmail.com",
+    email: "atabicumer@gmail.com",
     tel: "+923204077095",
+    calendly: "https://calendly.com/atabic",
     social: {
       GitHub: {
         name: "GitHub",
@@ -51,7 +72,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "mailto:atabic14@gmail.com",
+        url: "mailto:atabicumer@gmail.com",
         icon: Icons.email,
 
         navbar: false,
@@ -65,159 +86,172 @@ export const DATA = {
       href: "https://arbisoft.com",
       badges: [],
       location: "Lahore, Pakistan",
+      title: "Principal Software Engineer",
+      logoUrl: "/arbisoft.png",
+      start: "December 2025",
+      end: "Present",
+      description:
+        "Lead full-stack development of the Live Ops admin dashboard for a global loyalty and rewards platform (160+ countries) and own its end-to-end release process. Built ERP-MCP, an MCP server exposing internal ERP workflows to LLM tools, and delivered enterprise Okta SAML SSO for compliance reporting. Details on both in Projects below.",
+    },
+    {
+      company: "Arbisoft",
+      href: "https://arbisoft.com",
+      badges: [],
+      location: "Lahore, Pakistan",
+      title: "Senior Software Engineer",
+      logoUrl: "/arbisoft.png",
+      start: "December 2022",
+      end: "December 2025",
+      description:
+        "Owned the complete frontend architecture (Next.js, React, TypeScript), defining coding standards, component patterns, and release ownership across the product. Managed the full AWS deployment lifecycle (EC2, S3, CodeDeploy) and built GitHub Actions CI/CD to automate testing, merges, and production deployments. Configured NGINX reverse proxy for multi-tenant subdomain routing. Built real-time 1:1 and group chat via StompJS, integrated Firebase Cloud Messaging for push notifications, and established observability with Sentry, Vitest, and Playwright.",
+    },
+    {
+      company: "Arbisoft",
+      href: "https://arbisoft.com",
+      badges: [],
+      location: "Lahore, Pakistan",
       title: "Software Engineer",
       logoUrl: "/arbisoft.png",
       start: "July 2022",
-      end: "Present",
-      description: "Working as a MERN dev",
+      end: "December 2022",
+      description:
+        "Shipped releases for Kayak's hotels vertical across distributed teams and put a canary/smoke/sanity test strategy in place that doubled automated coverage. More on this in Projects below.",
     },
     {
-      company: "Nextbridge",
+      company: "Nextbridge Ltd.",
       badges: [],
       href: "https://nextbridge.com",
-      location: "Remote",
+      location: "Lahore, Pakistan",
       title: "Software Engineer",
       logoUrl: "/nextbridge.jpeg",
-      start: "October 2020",
-      end: "April 2021",
+      start: "January 2022",
+      end: "July 2022",
       description:
-        "Implemented a custom Kubernetes controller in Go to automate the deployment of MySQL and ProxySQL custom resources in order to enable 2,000+ internal developers to instantly deploy their app databases to production. Wrote several scripts in Go to automate MySQL database failovers while maintaining master-slave replication topologies and keeping Zookeeper nodes consistent with changes.",
+        "Drove frontend quality on the Curriki LMS, coding standards, code reviews, and TDD adoption with Jest and Playwright, and built GitHub Actions pipelines for linting, testing, and staging deployments.",
+    },
+    {
+      company: "Nextbridge Ltd.",
+      badges: [],
+      href: "https://nextbridge.com",
+      location: "Lahore, Pakistan",
+      title: "Associate Software Engineer",
+      logoUrl: "/nextbridge.jpeg",
+      start: "January 2021",
+      end: "January 2022",
+      description:
+        "Converted the LMS to a multi-tenant architecture with ACL-based permissions and migrated the legacy PHP admin panel to React. More on this in Projects below.",
+    },
+    {
+      company: "Xeon Technologies",
+      badges: [],
+      href: "",
+      location: "Lahore, Pakistan",
+      title: "Back End Developer",
+      logoUrl: "",
+      start: "September 2019",
+      end: "August 2020",
+      description:
+        "Designed and shipped production-ready REST APIs (Node.js, Express) connecting web and mobile clients to backend services. Optimized queries across PostgreSQL and MongoDB, cutting response times by roughly 40% under high load. Implemented JWT authentication, role-based access control, and rate limiting. Set up automated API testing (Jest, Supertest), raising coverage from 20% to 75%, and integrated Sentry and New Relic monitoring.",
     },
   ],
   education: [
     {
       school: "University of the Punjab",
       href: "https://pu.edu.pk",
-      degree: "Bachelor's Degree of Information Technology (BSIT)",
+      degree: "Bachelor's Degree, Information Technology (BSIT)",
       logoUrl: "/buildspace.jpg",
       start: "2016",
       end: "2020",
     },
   ],
-  // projects: [
-  //   {
-  //     title: "Chat Collect",
-  //     href: "https://chatcollect.com",
-  //     dates: "Jan 2024 - Feb 2024",
-  //     active: true,
-  //     description:
-  //       "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
-  //     technologies: [
-  //       "Next.js",
-  //       "Typescript",
-  //       "PostgreSQL",
-  //       "Prisma",
-  //       "TailwindCSS",
-  //       "Stripe",
-  //       "Shadcn UI",
-  //       "Magic UI",
-  //     ],
-  //     links: [
-  //       {
-  //         type: "Website",
-  //         href: "https://chatcollect.com",
-  //         icon: <Icons.globe className="size-3" />,
-  //       },
-  //     ],
-  //     image: "",
-  //     video:
-  //       "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
-  //   },
-  //   {
-  //     title: "Magic UI",
-  //     href: "https://magicui.design",
-  //     dates: "June 2023 - Present",
-  //     active: true,
-  //     description:
-  //       "Designed, developed and sold animated UI components for developers.",
-  //     technologies: [
-  //       "Next.js",
-  //       "Typescript",
-  //       "PostgreSQL",
-  //       "Prisma",
-  //       "TailwindCSS",
-  //       "Stripe",
-  //       "Shadcn UI",
-  //       "Magic UI",
-  //     ],
-  //     links: [
-  //       {
-  //         type: "Website",
-  //         href: "https://magicui.design",
-  //         icon: <Icons.globe className="size-3" />,
-  //       },
-  //       {
-  //         type: "Source",
-  //         href: "https://github.com/magicuidesign/magicui",
-  //         icon: <Icons.github className="size-3" />,
-  //       },
-  //     ],
-  //     image: "",
-  //     video: "https://cdn.magicui.design/bento-grid.mp4",
-  //   },
-  //   {
-  //     title: "llm.report",
-  //     href: "https://llm.report",
-  //     dates: "April 2023 - September 2023",
-  //     active: true,
-  //     description:
-  //       "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
-  //     technologies: [
-  //       "Next.js",
-  //       "Typescript",
-  //       "PostgreSQL",
-  //       "Prisma",
-  //       "TailwindCSS",
-  //       "Shadcn UI",
-  //       "Magic UI",
-  //       "Stripe",
-  //       "Cloudflare Workers",
-  //     ],
-  //     links: [
-  //       {
-  //         type: "Website",
-  //         href: "https://llm.report",
-  //         icon: <Icons.globe className="size-3" />,
-  //       },
-  //       {
-  //         type: "Source",
-  //         href: "https://github.com/dillionverma/llm.report",
-  //         icon: <Icons.github className="size-3" />,
-  //       },
-  //     ],
-  //     image: "",
-  //     video: "https://cdn.llm.report/openai-demo.mp4",
-  //   },
-  //   {
-  //     title: "Automatic Chat",
-  //     href: "https://automatic.chat",
-  //     dates: "April 2023 - March 2024",
-  //     active: true,
-  //     description:
-  //       "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
-  //     technologies: [
-  //       "Next.js",
-  //       "Typescript",
-  //       "PostgreSQL",
-  //       "Prisma",
-  //       "TailwindCSS",
-  //       "Shadcn UI",
-  //       "Magic UI",
-  //       "Stripe",
-  //       "Cloudflare Workers",
-  //     ],
-  //     links: [
-  //       {
-  //         type: "Website",
-  //         href: "https://automatic.chat",
-  //         icon: <Icons.globe className="size-3" />,
-  //       },
-  //     ],
-  //     image: "",
-  //     video:
-  //       "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
-  //   },
-  // ],
+  aiProjects: [
+    {
+      title: "ERP-MCP",
+      href: "",
+      dates: "2025, Present",
+      active: true,
+      description:
+        "Our internal ERP handled project logging, leave requests, and operational reporting through forms that took real time to fill out across 800+ people. I built ERP-MCP, a Model Context Protocol server in Python and FastAPI, that exposes those same workflows as tools an LLM can call, with scoped authentication and endpoints designed to be extended as new workflows come up. Now someone can ask Claude, Cursor, or ChatGPT to file a leave request or pull a report, and the assistant calls the ERP directly. It cut manual form-based work by roughly 60% company-wide. Internal tool, so no public repo, happy to walk through the architecture on a call.",
+      technologies: ["Python", "FastAPI", "MCP", "OAuth"],
+      links: [],
+      image: "",
+      video: "",
+    },
+    {
+      title: "SPIDER",
+      href: "",
+      dates: "2025, Present",
+      active: true,
+      description:
+        "A personal AI plugin I built after noticing how much time I lost re-explaining context to coding agents every session. SPIDER wires the agent into the tools and project context I actually use, so it starts a task already knowing the codebase conventions instead of guessing at them.",
+      technologies: ["TypeScript", "Node.js", "MCP"],
+      links: [],
+      image: "",
+      video: "",
+    },
+  ],
+  otherProjects: [
+    {
+      title: "Merit Incentives",
+      href: "https://www.meritincentives.com/",
+      dates: "2025, Present",
+      active: true,
+      description:
+        "I lead full-stack development on the Live Ops admin dashboard for Merit Incentives, a loyalty and rewards platform running in 160+ countries, a Next.js frontend on a NestJS backend in a microservices architecture. I built a NestJS gateway that proxies a dozen-plus internal services behind one unified API, so the dashboard stopped breaking every time an upstream service changed its contract. Actions on the dashboard publish domain events through a message broker, and other services react to them, so state stays in sync without the frontend polling anything. I own the release process end to end and I'm the engineering point of contact for the client on this one.",
+      technologies: ["Next.js", "NestJS", "Microservices", "Message Broker"],
+      links: [],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Orchid",
+      href: "https://www.orchidonline.co/",
+      dates: "2022, 2025",
+      active: false,
+      description:
+        "Owned frontend architecture (Next.js, React, TypeScript) for Orchid, defining coding standards and component patterns across the product. Built real-time 1:1 and group chat over StompJS and Firebase Cloud Messaging push notifications for foreground and background delivery, and set up Sentry, Vitest, and Playwright so regressions got caught before users saw them.",
+      technologies: ["Next.js", "React", "StompJS", "Firebase"],
+      links: [],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Kayak",
+      href: "https://www.kayak.com/",
+      dates: "2022",
+      active: false,
+      description:
+        "Shipped releases for Kayak's hotels vertical, collaborating across distributed teams to define requirements and align delivery timelines. Architected backend services in TypeScript and Node.js and put a proper test strategy in place, canary, smoke, and sanity pipelines, that doubled automated test coverage for the hotels platform. Also tightened up structured logging and error-handling standards, which brought production incident frequency down.",
+      technologies: ["TypeScript", "Node.js", "Testing", "Observability"],
+      links: [],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Avetta",
+      href: "https://www.avetta.com/",
+      dates: "2023, 2024",
+      active: false,
+      description:
+        "Built enterprise Okta SAML SSO and a batch verification workflow, setup, processing, a summary view, and manual review, for Avetta's compliance reporting, where every step needed to be auditable. The tricky part wasn't the SSO integration itself, it was keeping the frontend and backend API contracts tight enough that a batch of thousands of records couldn't silently drift out of sync during manual review.",
+      technologies: ["NestJS", "Okta SAML", "PostgreSQL"],
+      links: [],
+      image: "",
+      video: "",
+    },
+    {
+      title: "Curriki",
+      href: "https://www.curriki.org/",
+      dates: "2021, 2022",
+      active: false,
+      description:
+        "Converted Curriki's LMS into a multi-tenant platform with ACL-based permissions, so client data stayed isolated under much higher concurrent usage. Migrated the legacy PHP admin panel over to React, translated Figma designs into production components, and introduced Jest and React Testing Library where there was barely any testing before, taking unit-test coverage from around 10% to 70%.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Jest"],
+      links: [],
+      image: "",
+      video: "",
+    },
+  ],
   // hackathons: [
   //   {
   //     title: "Hack Western 5",
